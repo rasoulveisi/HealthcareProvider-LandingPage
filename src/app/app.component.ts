@@ -73,7 +73,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.windowWidth = event.target.innerWidth;
-    if (this.windowWidth >= 768) {
+    if (this.windowWidth >= 1024) {
       this.navOpen = false;
     }
   }

@@ -1,27 +1,20 @@
-<!-- notification for small viewports and landscape oriented smartphones -->
-<div class="fixed inset-0 bg-blue-500 text-white flex flex-col items-center justify-center z-50 md:hidden">
-  <a class="flex items-center space-x-2 mb-4">
-    <img src="assets/img/logo.png" alt="Pediatric OT Therapy" class="w-8 h-8">
-    <p class="text-xl font-bold">Pediatric OT Care</p>
-  </a>
-  <p class="text-center px-4">Helping children thrive through specialized occupational therapy and mental health support. Please rotate your device for the best experience.</p>
-</div>
+
 
 <div class="min-h-screen bg-gray-50 text-gray-800 relative overflow-hidden">
   <!-- Navigation Toggle Button -->
-  <button class="fixed top-6 right-6 z-50 w-8 h-8 flex flex-col justify-center items-center space-y-1 md:hidden" (click)="toggleNav()">
+  <button class="fixed top-4 right-4 z-50 w-10 h-10 flex flex-col justify-center items-center space-y-1 lg:hidden bg-white rounded-lg shadow-lg" (click)="toggleNav()">
     <span class="w-6 h-0.5 bg-blue-500 transition-all" [class.rotate-45]="navOpen" [class.translate-y-1.5]="navOpen"></span>
     <span class="w-6 h-0.5 bg-blue-500 transition-all" [class.opacity-0]="navOpen"></span>
     <span class="w-6 h-0.5 bg-blue-500 transition-all" [class.-rotate-45]="navOpen" [class.-translate-y-1.5]="navOpen"></span>
   </button>
 
   <!-- Header -->
-  <header class="fixed top-0 left-0 right-0 z-40 flex justify-between items-center p-6 bg-white/95 backdrop-blur-sm shadow-sm">
+  <header class="fixed top-0 left-0 right-0 z-40 flex justify-between items-center p-4 lg:p-6 bg-white/95 backdrop-blur-sm shadow-sm">
     <a class="flex items-center space-x-2">
-      <img src="assets/img/logo.png" alt="Pediatric OT Therapy" class="w-8 h-8">
-      <p class="text-xl font-bold text-blue-500">Pediatric OT Care</p>
+      <img src="assets/img/logo.png" alt="Pediatric OT Therapy" class="w-6 h-6 lg:w-8 lg:h-8">
+      <p class="text-lg lg:text-xl font-bold text-blue-500">Pediatric OT Care</p>
     </a>
-    <button class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full transition-colors hidden md:block font-medium" 
+    <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 lg:px-6 lg:py-2 rounded-full transition-colors hidden lg:block font-medium text-sm lg:text-base" 
             [class.ring-2]="isCtaActive()" [class.ring-yellow-400]="isCtaActive()" (click)="onCtaClick()">
       Schedule Visit
     </button>
@@ -45,105 +38,105 @@
   </nav>
 
   <!-- Main Content -->
-  <main #viewport class="pt-20 transition-all duration-300" [class.ml-64]="navOpen && windowWidth >= 768">
+  <main #viewport class="pt-16 lg:pt-20 transition-all duration-300" [class.ml-64]="navOpen && windowWidth >= 1024">
     
     <!-- Home Section -->
-    <section *ngIf="activeSection === 'home'" class="min-h-screen flex items-center justify-center px-6 bg-gradient-to-br from-blue-50 to-yellow-50">
-      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6 text-gray-800">
+    <section *ngIf="activeSection === 'home'" class="min-h-screen flex items-center justify-center px-4 lg:px-6 bg-gradient-to-br from-blue-50 to-yellow-50">
+      <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div class="text-center lg:text-left">
+          <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight mb-6 text-gray-800">
             Helping Children<br><span class="text-blue-500">Thrive</span><br><span class="text-yellow-500">Every Day</span>
           </h1>
-          <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+          <p class="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
             Specialized occupational therapy and mental health support for children in the comfort of your home.
           </p>
-          <button class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full transition-colors flex items-center space-x-2 group font-medium text-lg" (click)="onCtaClick()">
+          <button class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 lg:px-8 lg:py-4 rounded-full transition-colors flex items-center space-x-2 group font-medium text-base lg:text-lg mx-auto lg:mx-0" (click)="onCtaClick()">
             <span>Schedule Home Visit</span>
-            <svg class="w-6 h-6 transform group-hover:translate-x-1 transition-transform" viewBox="0 0 150 118" fill="currentColor">
+            <svg class="w-5 h-5 lg:w-6 lg:h-6 transform group-hover:translate-x-1 transition-transform" viewBox="0 0 150 118" fill="currentColor">
               <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
                 <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
               </g>
             </svg>
           </button>
         </div>
-        <div>
-          <img src="assets/img/introduction-visual.png" alt="Child-Friendly Occupational Therapy" class="w-full max-w-md mx-auto rounded-2xl shadow-lg">
+        <div class="order-first lg:order-last">
+          <img src="assets/img/introduction-visual.png" alt="Child-Friendly Occupational Therapy" class="w-full max-w-sm lg:max-w-md mx-auto rounded-2xl shadow-lg">
         </div>
       </div>
       
       <!-- Service Highlights -->
-      <div class="absolute bottom-12 left-6 right-6">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
-          <div class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/90 transition-colors shadow-lg border border-yellow-200">
-            <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center mb-4">
-              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+      <div class="mt-16 lg:absolute lg:bottom-12 lg:left-6 lg:right-6">
+        <div class="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 px-4 lg:px-0">
+          <div class="bg-white/80 backdrop-blur-sm p-4 lg:p-6 rounded-2xl hover:bg-white/90 transition-colors shadow-lg border border-yellow-200">
+            <div class="w-10 h-10 lg:w-12 lg:h-12 bg-yellow-400 rounded-full flex items-center justify-center mb-3 lg:mb-4">
+              <svg class="w-5 h-5 lg:w-6 lg:h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
               </svg>
             </div>
-            <h3 class="text-xl font-semibold mb-2 text-gray-800">Pediatric Expertise</h3>
-            <p class="text-gray-600">Specialized in helping children develop essential life skills and overcome developmental challenges.</p>
+            <h3 class="text-lg lg:text-xl font-semibold mb-2 text-gray-800">Pediatric Expertise</h3>
+            <p class="text-sm lg:text-base text-gray-600">Specialized in helping children develop essential life skills and overcome developmental challenges.</p>
           </div>
-          <div class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/90 transition-colors shadow-lg border border-blue-200">
-            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-4">
-              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+          <div class="bg-white/80 backdrop-blur-sm p-4 lg:p-6 rounded-2xl hover:bg-white/90 transition-colors shadow-lg border border-blue-200">
+            <div class="w-10 h-10 lg:w-12 lg:h-12 bg-blue-500 rounded-full flex items-center justify-center mb-3 lg:mb-4">
+              <svg class="w-5 h-5 lg:w-6 lg:h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
               </svg>
             </div>
-            <h3 class="text-xl font-semibold mb-2 text-gray-800">Mental Health Support</h3>
-            <p class="text-gray-600">Comprehensive mental health services to support emotional well-being and resilience in children.</p>
+            <h3 class="text-lg lg:text-xl font-semibold mb-2 text-gray-800">Mental Health Support</h3>
+            <p class="text-sm lg:text-base text-gray-600">Comprehensive mental health services to support emotional well-being and resilience in children.</p>
           </div>
-          <div class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/90 transition-colors shadow-lg border border-green-200">
-            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mb-4">
-              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+          <div class="bg-white/80 backdrop-blur-sm p-4 lg:p-6 rounded-2xl hover:bg-white/90 transition-colors shadow-lg border border-green-200 sm:col-span-2 lg:col-span-1">
+            <div class="w-10 h-10 lg:w-12 lg:h-12 bg-green-500 rounded-full flex items-center justify-center mb-3 lg:mb-4">
+              <svg class="w-5 h-5 lg:w-6 lg:h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
               </svg>
             </div>
-            <h3 class="text-xl font-semibold mb-2 text-gray-800">Home Visits</h3>
-            <p class="text-gray-600">Convenient in-home therapy sessions in your child's natural environment for optimal comfort and progress.</p>
+            <h3 class="text-lg lg:text-xl font-semibold mb-2 text-gray-800">Home Visits</h3>
+            <p class="text-sm lg:text-base text-gray-600">Convenient in-home therapy sessions in your child's natural environment for optimal comfort and progress.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Services Section -->
-    <section *ngIf="activeSection === 'works'" class="min-h-screen flex items-center justify-center px-6 bg-white">
+    <section *ngIf="activeSection === 'works'" class="min-h-screen flex items-center justify-center px-4 lg:px-6 bg-white">
       <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-6xl font-bold text-gray-800 mb-4">My Services</h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive occupational therapy and mental health services tailored to each child's unique needs</p>
+        <div class="text-center mb-12 lg:mb-16">
+          <h2 class="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-800 mb-4">My Services</h2>
+          <p class="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4 lg:px-0">Comprehensive occupational therapy and mental health services tailored to each child's unique needs</p>
         </div>
         
         <div class="relative">
           <!-- Slider -->
-          <div class="flex space-x-6 justify-center items-center">
+          <div class="flex space-x-4 lg:space-x-6 justify-center items-center overflow-x-auto lg:overflow-visible px-4 lg:px-0">
             <div *ngFor="let item of getSliderItems(); let i = index" 
-                 class="flex-shrink-0 w-80 transition-all duration-500"
+                 class="flex-shrink-0 w-72 lg:w-80 transition-all duration-500"
                  [class.opacity-60]="item.position !== 'center'"
                  [class.scale-90]="item.position !== 'center'">
-              <div class="bg-gradient-to-br from-blue-50 to-yellow-50 p-6 rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow">
-                <div class="aspect-video mb-4 overflow-hidden rounded-xl">
+              <div class="bg-gradient-to-br from-blue-50 to-yellow-50 p-4 lg:p-6 rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow">
+                <div class="aspect-video mb-3 lg:mb-4 overflow-hidden rounded-xl">
                   <img [src]="item.image" [alt]="item.title" 
                        class="w-full h-full object-cover">
                 </div>
-                <h3 class="text-xl font-semibold mb-2 text-gray-800">{{ item.title }}</h3>
-                <p class="text-gray-600">{{ item.description }}</p>
+                <h3 class="text-lg lg:text-xl font-semibold mb-2 text-gray-800">{{ item.title }}</h3>
+                <p class="text-sm lg:text-base text-gray-600">{{ item.description }}</p>
               </div>
             </div>
           </div>
           
           <!-- Navigation Arrows -->
-          <button class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 bg-blue-500 hover:bg-blue-600 text-white rounded-full flex items-center justify-center transition-colors shadow-lg"
+          <button class="absolute left-2 lg:left-0 top-1/2 -translate-y-1/2 lg:-translate-x-4 w-10 h-10 lg:w-12 lg:h-12 bg-blue-500 hover:bg-blue-600 text-white rounded-full flex items-center justify-center transition-colors shadow-lg z-10"
                   (click)="prevSlide()">
-            <svg class="w-6 h-6" viewBox="0 0 150 118" fill="currentColor">
+            <svg class="w-5 h-5 lg:w-6 lg:h-6" viewBox="0 0 150 118" fill="currentColor">
               <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
                 <path d="M561,1169C525,1155,10,640,3,612c-3-13,1-36,8-52c8-15,134-145,281-289C527,41,562,10,590,10c22,0,41,9,61,29c55,55,49,64-163,278L296,510h575c564,0,576,0,597,20c46,43,37,109-18,137c-19,10-159,13-590,13l-565,1l182,180c101,99,187,188,193,199c16,30,12,57-12,84C631,1174,595,1183,561,1169z"/>
               </g>
             </svg>
           </button>
           
-          <button class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 bg-blue-500 hover:bg-blue-600 text-white rounded-full flex items-center justify-center transition-colors shadow-lg"
+          <button class="absolute right-2 lg:right-0 top-1/2 -translate-y-1/2 lg:translate-x-4 w-10 h-10 lg:w-12 lg:h-12 bg-blue-500 hover:bg-blue-600 text-white rounded-full flex items-center justify-center transition-colors shadow-lg z-10"
                   (click)="nextSlide()">
-            <svg class="w-6 h-6" viewBox="0 0 150 118" fill="currentColor">
+            <svg class="w-5 h-5 lg:w-6 lg:h-6" viewBox="0 0 150 118" fill="currentColor">
               <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
                 <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
               </g>
@@ -154,13 +147,13 @@
     </section>
 
     <!-- About Section -->
-    <section *ngIf="activeSection === 'about'" class="min-h-screen flex items-center justify-center px-6 bg-gradient-to-br from-yellow-50 to-blue-50">
-      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 class="text-5xl md:text-7xl font-bold leading-tight mb-6 text-gray-800">
+    <section *ngIf="activeSection === 'about'" class="min-h-screen flex items-center justify-center px-4 lg:px-6 bg-gradient-to-br from-yellow-50 to-blue-50">
+      <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div class="text-center lg:text-left">
+          <h2 class="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight mb-6 text-gray-800">
             Passionate About<br><span class="text-blue-500">Children's</span><br><span class="text-yellow-500">Success</span>
           </h2>
-          <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+          <p class="text-base lg:text-lg text-gray-600 mb-6 leading-relaxed max-w-lg mx-auto lg:mx-0">
             With years of experience in pediatric occupational therapy and mental health, I'm dedicated to helping children reach their full potential in a supportive, nurturing environment.
           </p>
           <div class="space-y-4 mb-8">
@@ -198,26 +191,26 @@
             </svg>
           </a>
         </div>
-        <div>
-          <img src="assets/img/about-visual.png" alt="About Our Practice" class="w-full max-w-md mx-auto rounded-2xl shadow-lg">
+        <div class="order-first lg:order-last">
+          <img src="assets/img/about-visual.png" alt="About Our Practice" class="w-full max-w-sm lg:max-w-md mx-auto rounded-2xl shadow-lg">
         </div>
       </div>
       
       <!-- Testimonials Preview -->
-      <div class="absolute bottom-12 left-6 right-6">
-        <div class="max-w-6xl mx-auto flex justify-center space-x-8">
-          <a href="#0" class="text-2xl font-semibold hover:text-blue-500 transition-colors text-gray-700">Testimonials</a>
-          <a href="#0" class="text-2xl font-semibold hover:text-blue-500 transition-colors text-gray-700">Credentials</a>
-          <a href="#0" class="text-2xl font-semibold hover:text-blue-500 transition-colors text-gray-700">Approach</a>
+      <div class="mt-12 lg:absolute lg:bottom-12 lg:left-6 lg:right-6">
+        <div class="max-w-6xl mx-auto flex justify-center space-x-4 lg:space-x-8 px-4 lg:px-0">
+          <a href="#0" class="text-lg lg:text-2xl font-semibold hover:text-blue-500 transition-colors text-gray-700">Testimonials</a>
+          <a href="#0" class="text-lg lg:text-2xl font-semibold hover:text-blue-500 transition-colors text-gray-700">Credentials</a>
+          <a href="#0" class="text-lg lg:text-2xl font-semibold hover:text-blue-500 transition-colors text-gray-700">Approach</a>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section *ngIf="activeSection === 'contact'" class="min-h-screen flex items-center justify-center px-6 bg-white">
+    <section *ngIf="activeSection === 'contact'" class="min-h-screen flex items-center justify-center px-4 lg:px-6 bg-white">
       <div class="max-w-2xl mx-auto text-center">
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-8">Get In Touch</h2>
-        <div class="bg-gradient-to-br from-blue-50 to-yellow-50 p-8 rounded-2xl shadow-lg border border-gray-200">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-8">Get In Touch</h2>
+        <div class="bg-gradient-to-br from-blue-50 to-yellow-50 p-6 lg:p-8 rounded-2xl shadow-lg border border-gray-200">
           <div class="mb-8">
             <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
               <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -233,84 +226,84 @@
             </a>
           </div>
           
-          <div class="flex justify-center space-x-6">
-            <a href="#0" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full transition-colors font-medium">LinkedIn</a>
-            <a href="#0" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full transition-colors font-medium">Facebook</a>
-            <a href="mailto:hello@pediatricotcare.com" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full transition-colors font-medium">Email Me</a>
+          <div class="flex justify-center space-x-3 lg:space-x-6 flex-wrap gap-2">
+            <a href="#0" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-2 lg:px-4 lg:py-2 rounded-full transition-colors font-medium text-sm lg:text-base">LinkedIn</a>
+            <a href="#0" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-2 lg:px-4 lg:py-2 rounded-full transition-colors font-medium text-sm lg:text-base">Facebook</a>
+            <a href="mailto:hello@pediatricotcare.com" class="bg-green-500 hover:bg-green-600 text-white px-3 py-2 lg:px-4 lg:py-2 rounded-full transition-colors font-medium text-sm lg:text-base">Email Me</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Book Home Visit Section -->
-    <section *ngIf="activeSection === 'hire'" class="min-h-screen flex items-center justify-center px-6 bg-gradient-to-br from-blue-50 to-yellow-50">
+    <section *ngIf="activeSection === 'hire'" class="min-h-screen flex items-center justify-center px-4 lg:px-6 bg-gradient-to-br from-blue-50 to-yellow-50">
       <div class="max-w-2xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-4xl md:text-6xl font-bold text-gray-800 mb-4">Book a Home Visit</h2>
-          <p class="text-xl text-gray-600">Schedule a convenient in-home consultation for your child</p>
+        <div class="text-center mb-8 lg:mb-12">
+          <h2 class="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-800 mb-4">Book a Home Visit</h2>
+          <p class="text-lg lg:text-xl text-gray-600 px-4 lg:px-0">Schedule a convenient in-home consultation for your child</p>
         </div>
         
-        <form class="space-y-8 bg-white p-8 rounded-2xl shadow-lg border border-gray-200" (ngSubmit)="onSubmit()" #workForm="ngForm">
+        <form class="space-y-6 lg:space-y-8 bg-white p-6 lg:p-8 rounded-2xl shadow-lg border border-gray-200" (ngSubmit)="onSubmit()" #workForm="ngForm">
           <!-- Service Options -->
-          <div class="grid md:grid-cols-2 gap-4">
-            <div class="space-y-4">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="space-y-3 lg:space-y-4">
               <label class="flex items-center space-x-3 cursor-pointer group">
                 <input type="checkbox" name="services" value="developmental assessment" 
                        (change)="onServiceChange($event, 'developmental assessment')"
-                       class="w-5 h-5 text-blue-500 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
-                <span class="group-hover:text-blue-500 transition-colors text-gray-700">Developmental Assessment</span>
+                       class="w-4 h-4 lg:w-5 lg:h-5 text-blue-500 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                <span class="group-hover:text-blue-500 transition-colors text-gray-700 text-sm lg:text-base">Developmental Assessment</span>
               </label>
               
               <label class="flex items-center space-x-3 cursor-pointer group">
                 <input type="checkbox" name="services" value="sensory processing" 
                        (change)="onServiceChange($event, 'sensory processing')"
-                       class="w-5 h-5 text-blue-500 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
-                <span class="group-hover:text-blue-500 transition-colors text-gray-700">Sensory Processing</span>
+                       class="w-4 h-4 lg:w-5 lg:h-5 text-blue-500 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                <span class="group-hover:text-blue-500 transition-colors text-gray-700 text-sm lg:text-base">Sensory Processing</span>
               </label>
               
               <label class="flex items-center space-x-3 cursor-pointer group">
                 <input type="checkbox" name="services" value="fine motor skills" 
                        (change)="onServiceChange($event, 'fine motor skills')"
-                       class="w-5 h-5 text-blue-500 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
-                <span class="group-hover:text-blue-500 transition-colors text-gray-700">Fine Motor Skills</span>
+                       class="w-4 h-4 lg:w-5 lg:h-5 text-blue-500 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                <span class="group-hover:text-blue-500 transition-colors text-gray-700 text-sm lg:text-base">Fine Motor Skills</span>
               </label>
             </div>
             
-            <div class="space-y-4">
+            <div class="space-y-3 lg:space-y-4">
               <label class="flex items-center space-x-3 cursor-pointer group">
                 <input type="checkbox" name="services" value="mental health support" 
                        (change)="onServiceChange($event, 'mental health support')"
-                       class="w-5 h-5 text-blue-500 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
-                <span class="group-hover:text-blue-500 transition-colors text-gray-700">Mental Health Support</span>
+                       class="w-4 h-4 lg:w-5 lg:h-5 text-blue-500 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                <span class="group-hover:text-blue-500 transition-colors text-gray-700 text-sm lg:text-base">Mental Health Support</span>
               </label>
               
               <label class="flex items-center space-x-3 cursor-pointer group">
                 <input type="checkbox" name="services" value="behavioral strategies" 
                        (change)="onServiceChange($event, 'behavioral strategies')"
-                       class="w-5 h-5 text-blue-500 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
-                <span class="group-hover:text-blue-500 transition-colors text-gray-700">Behavioral Strategies</span>
+                       class="w-4 h-4 lg:w-5 lg:h-5 text-blue-500 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                <span class="group-hover:text-blue-500 transition-colors text-gray-700 text-sm lg:text-base">Behavioral Strategies</span>
               </label>
               
               <label class="flex items-center space-x-3 cursor-pointer group">
                 <input type="checkbox" name="services" value="parent consultation" 
                        (change)="onServiceChange($event, 'parent consultation')"
-                       class="w-5 h-5 text-blue-500 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
-                <span class="group-hover:text-blue-500 transition-colors text-gray-700">Parent Consultation</span>
+                       class="w-4 h-4 lg:w-5 lg:h-5 text-blue-500 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                <span class="group-hover:text-blue-500 transition-colors text-gray-700 text-sm lg:text-base">Parent Consultation</span>
               </label>
             </div>
           </div>
           
           <!-- Contact Information -->
-          <div class="grid md:grid-cols-2 gap-4">
+          <div class="grid sm:grid-cols-2 gap-4">
             <div class="relative">
               <input type="text" id="name" name="name" required
                      [(ngModel)]="formData.name"
                      (focus)="onInputFocus($event)"
                      (blur)="onInputBlur($event)"
                      (input)="onInputChange($event)"
-                     class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent peer text-gray-800"
+                     class="w-full bg-gray-50 border border-gray-300 rounded-lg px-3 py-2 lg:px-4 lg:py-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent peer text-gray-800 text-sm lg:text-base"
                      placeholder=" ">
-              <label for="name" class="absolute left-4 top-3 text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:top-1 peer-focus:text-sm peer-focus:text-blue-500">
+              <label for="name" class="absolute left-3 lg:left-4 top-2 lg:top-3 text-gray-500 transition-all peer-placeholder-shown:top-2 lg:peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm lg:peer-placeholder-shown:text-base peer-focus:top-0 lg:peer-focus:top-1 peer-focus:text-xs lg:peer-focus:text-sm peer-focus:text-blue-500">
                 Parent/Guardian Name
               </label>
             </div>
@@ -321,16 +314,16 @@
                      (focus)="onInputFocus($event)"
                      (blur)="onInputBlur($event)"
                      (input)="onInputChange($event)"
-                     class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent peer text-gray-800"
+                     class="w-full bg-gray-50 border border-gray-300 rounded-lg px-3 py-2 lg:px-4 lg:py-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent peer text-gray-800 text-sm lg:text-base"
                      placeholder=" ">
-              <label for="email" class="absolute left-4 top-3 text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:top-1 peer-focus:text-sm peer-focus:text-blue-500">
+              <label for="email" class="absolute left-3 lg:left-4 top-2 lg:top-3 text-gray-500 transition-all peer-placeholder-shown:top-2 lg:peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm lg:peer-placeholder-shown:text-base peer-focus:top-0 lg:peer-focus:top-1 peer-focus:text-xs lg:peer-focus:text-sm peer-focus:text-blue-500">
                 Email Address
               </label>
             </div>
           </div>
           
           <button type="submit" 
-                  class="w-full bg-green-500 hover:bg-green-600 text-white py-4 rounded-lg font-semibold transition-colors text-lg shadow-lg">
+                  class="w-full bg-green-500 hover:bg-green-600 text-white py-3 lg:py-4 rounded-lg font-semibold transition-colors text-base lg:text-lg shadow-lg">
             Schedule Home Visit
           </button>
         </form>
@@ -339,17 +332,17 @@
   </main>
 
   <!-- Bottom Navigation -->
-  <nav class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 hidden md:block shadow-lg border border-gray-200">
-    <ul class="flex space-x-6">
-      <li><button class="hover:text-blue-500 transition-colors text-gray-700 font-medium" 
+  <nav class="fixed bottom-4 lg:bottom-6 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 lg:px-6 lg:py-3 hidden lg:block shadow-lg border border-gray-200">
+    <ul class="flex space-x-4 lg:space-x-6">
+      <li><button class="hover:text-blue-500 transition-colors text-gray-700 font-medium text-sm lg:text-base" 
                   [class.text-blue-500]="activeSection === 'home'" (click)="setActiveSection('home')">Home</button></li>
-      <li><button class="hover:text-blue-500 transition-colors text-gray-700 font-medium" 
+      <li><button class="hover:text-blue-500 transition-colors text-gray-700 font-medium text-sm lg:text-base" 
                   [class.text-blue-500]="activeSection === 'works'" (click)="setActiveSection('works')">Services</button></li>
-      <li><button class="hover:text-blue-500 transition-colors text-gray-700 font-medium" 
+      <li><button class="hover:text-blue-500 transition-colors text-gray-700 font-medium text-sm lg:text-base" 
                   [class.text-blue-500]="activeSection === 'about'" (click)="setActiveSection('about')">About Me</button></li>
-      <li><button class="hover:text-blue-500 transition-colors text-gray-700 font-medium" 
+      <li><button class="hover:text-blue-500 transition-colors text-gray-700 font-medium text-sm lg:text-base" 
                   [class.text-blue-500]="activeSection === 'contact'" (click)="setActiveSection('contact')">Contact</button></li>
-      <li><button class="hover:text-blue-500 transition-colors text-gray-700 font-medium" 
+      <li><button class="hover:text-blue-500 transition-colors text-gray-700 font-medium text-sm lg:text-base" 
                   [class.text-blue-500]="activeSection === 'hire'" (click)="setActiveSection('hire')">Book Visit</button></li>
     </ul>
   </nav>
